@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lod_prize_tracker">
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="lod_prize_tracker"
         android:icon="@mipmap/ic_launcher">
