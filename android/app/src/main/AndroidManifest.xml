@@ -2,7 +2,7 @@
     package="com.example.lod_prize_tracker">
    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="lod_prize_tracker"
+        android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
