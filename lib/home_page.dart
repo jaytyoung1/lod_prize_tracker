@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lod_prize_tracker/application/fantasy_team/fantasy_team.dart';
+import 'package:lod_prize_tracker/presentation/pages/points_allowed/points_allowed_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_for/points_for_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/standings/standings_page.dart';
 import 'infrastructure/fantasy_team/fantasy_team_repository.dart';
@@ -44,8 +45,8 @@ class _HomePageState extends State<HomePage> {
               PointsForPage(
                 fantasyTeams: state.fantasyTeamsPointsFor,
               ),
-              StandingsPage(
-                fantasyTeams: state.fantasyTeamsRanked,
+              PointsAllowedPage(
+                fantasyTeams: state.fantasyTeamsPointsAllowed,
               ),
             ];
 

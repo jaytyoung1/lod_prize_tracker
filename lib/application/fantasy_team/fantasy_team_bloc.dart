@@ -33,9 +33,13 @@ class FantasyTeamBloc extends Bloc<FantasyTeamEvent, FantasyTeamState> {
     List<FantasyTeam> _fantasyTeamsPointsFor =
         await _fantasyTeamRepository.getPointsFor();
 
+    List<FantasyTeam> _fantasyTeamsPointsAllowed =
+        await _fantasyTeamRepository.getPointsAllowed();
+
     yield FantasyTeamStateLoaded(
       fantasyTeamsRanked: _fantasyTeamsRanked,
       fantasyTeamsPointsFor: _fantasyTeamsPointsFor,
+      fantasyTeamsPointsAllowed: _fantasyTeamsPointsAllowed,
     );
   }
 }

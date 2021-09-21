@@ -8,4 +8,7 @@ abstract class IFantasyTeamRepository {
 
   /// Gets fantasy teams sorted by total points for.
   Future<List<FantasyTeam>> getPointsFor();
+
+  /// Gets fantasy teams sorted by total points allowed.
+  Future<List<FantasyTeam>> getPointsAllowed();
 }

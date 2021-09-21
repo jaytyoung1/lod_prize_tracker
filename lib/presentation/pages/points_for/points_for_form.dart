@@ -14,7 +14,7 @@ class PointsForForm extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return Card(
           child: ListTile(
-            leading: Text(fantasyTeams[index].playoffSeed.toString()),
+            leading: Text((index + 1).toString()),
             title: Text(fantasyTeams[index].location! +
                 " " +
                 fantasyTeams[index].nickname!),
