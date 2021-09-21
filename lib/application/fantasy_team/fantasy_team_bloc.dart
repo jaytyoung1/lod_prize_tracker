@@ -27,9 +27,15 @@ class FantasyTeamBloc extends Bloc<FantasyTeamEvent, FantasyTeamState> {
   Stream<FantasyTeamState> _mapLoadFantasyTeamsToState() async* {
     yield FantasyTeamStateLoading();
 
-    List<FantasyTeam> _fantasyTeams =
+    List<FantasyTeam> _fantasyTeamsRanked =
         await _fantasyTeamRepository.getFantasyTeamsRanked();
 
-    yield FantasyTeamStateLoaded(fantasyTeams: _fantasyTeams);
+    List<FantasyTeam> _fantasyTeamsPointsFor =
+        await _fantasyTeamRepository.getPointsFor();
+
+    yield FantasyTeamStateLoaded(
+      fantasyTeamsRanked: _fantasyTeamsRanked,
+      fantasyTeamsPointsFor: _fantasyTeamsPointsFor,
+    );
   }
 }

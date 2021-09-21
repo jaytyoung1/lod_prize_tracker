@@ -52,4 +52,41 @@ class FantasyTeamRepository implements IFantasyTeamRepository {
       throw Exception('Failed to load ranked fantasy teams');
     }
   }
+
+  @override
+  Future<List<FantasyTeam>> getPointsFor() async {
+    List<FantasyTeam> _fantasyTeams = [];
+    final teamView = "mTeam";
+    final response = await http.get(
+      Uri.parse(espnApiUrl + teamView),
+    );
+
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      // var teams = response.body['teams'];
+
+      // String body = response.body;
+      // String bodyEscaped = response.body.replaceAll(r"\", "");
+      var teams = json.decode(response.body.replaceAll(r"\", ""))['teams'];
+      // var test2 = json.decode(response.body);
+
+      _fantasyTeams =
+          (teams as List).map((e) => FantasyTeam.fromJson(e)).toList();
+
+      _fantasyTeams.sort((a, b) =>
+          b.record.overall!.pointsFor!.compareTo(a.record.overall!.pointsFor!));
+
+      // _fantasyTeams = List<FantasyTeam>.from(test)
+
+      // _fantasyTeams = List<FantasyTeam>.from(
+      //     test.map((model) => FantasyTeam.fromJson(model)));
+      // return Album.fromJson(jsonDecode(response.body));
+      return _fantasyTeams;
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load ranked fantasy teams');
+    }
+  }
 }

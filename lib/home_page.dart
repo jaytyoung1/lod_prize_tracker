@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lod_prize_tracker/application/fantasy_team/fantasy_team.dart';
-import 'package:lod_prize_tracker/presentation/pages/standings_page.dart';
+import 'package:lod_prize_tracker/presentation/pages/points_for/points_for_page.dart';
+import 'package:lod_prize_tracker/presentation/pages/standings/standings_page.dart';
 import 'infrastructure/fantasy_team/fantasy_team_repository.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,13 +39,13 @@ class _HomePageState extends State<HomePage> {
           if (state is FantasyTeamStateLoaded) {
             pages = [
               StandingsPage(
-                fantasyTeams: state.fantasyTeams,
+                fantasyTeams: state.fantasyTeamsRanked,
+              ),
+              PointsForPage(
+                fantasyTeams: state.fantasyTeamsPointsFor,
               ),
               StandingsPage(
-                fantasyTeams: state.fantasyTeams,
-              ),
-              StandingsPage(
-                fantasyTeams: state.fantasyTeams,
+                fantasyTeams: state.fantasyTeamsRanked,
               ),
             ];
 
@@ -63,11 +64,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.map),
-                    label: 'PF',
+                    label: 'Points For',
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.star),
-                    label: 'PA',
+                    label: 'Points Allowed',
                   ),
                 ],
                 currentIndex: pageIndex,
