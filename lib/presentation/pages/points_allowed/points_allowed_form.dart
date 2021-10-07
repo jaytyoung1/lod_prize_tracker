@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lod_prize_tracker/domain/fantasy_team/entities.dart';
+import 'package:lod_prize_tracker/domain/fantasy_team/fantasy_team.dart';
 
 class PointsAllowedForm extends StatelessWidget {
   final List<FantasyTeam> fantasyTeams;
@@ -18,8 +18,11 @@ class PointsAllowedForm extends StatelessWidget {
             title: Text(fantasyTeams[index].location! +
                 " " +
                 fantasyTeams[index].nickname!),
-            trailing: Text(
-                fantasyTeams[index].record.overall!.pointsAgainst.toString()),
+            trailing: Text(fantasyTeams[index]
+                .record
+                .overall!
+                .pointsAgainst!
+                .toStringAsFixed(2)),
           ),
         );
       },

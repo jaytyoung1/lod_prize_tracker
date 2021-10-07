@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lod_prize_tracker/domain/fantasy_team/entities.dart';
+import 'package:lod_prize_tracker/domain/fantasy_team/fantasy_team.dart';
 
 class StandingsForm extends StatelessWidget {
   final List<FantasyTeam> fantasyTeams;
