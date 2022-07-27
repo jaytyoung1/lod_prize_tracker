@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'fantasy_team.dart';
+
+import 'package:lod_prize_tracker/domain/fantasy_team/fantasy_team.dart';
 
 /// Defines an interface for the ESPN fantasy team repository
 abstract class IFantasyTeamRepository {

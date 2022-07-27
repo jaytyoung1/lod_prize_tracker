@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lod_prize_tracker/application/fantasy_team/fantasy_team.dart';
+import 'package:lod_prize_tracker/infrastructure/fantasy_team/fantasy_team_repository.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_allowed/points_allowed_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_for/points_for_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/standings/standings_page.dart';
-import 'infrastructure/fantasy_team/fantasy_team_repository.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key, required this.title}) : super(key: key);
+  const HomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   int pageIndex = 0;
 
   pageIndexCallback(index) {
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               ),
               body: pages[pageIndex],
               bottomNavigationBar: BottomNavigationBar(
-                items: [
+                items: const [
                   BottomNavigationBarItem(
                     icon: Icon(
                       Icons.list,
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
               ),
             );
           }
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         },
         // child: Center(
         //   child: Column(

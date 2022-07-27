@@ -22,21 +22,21 @@ class FantasyTeamBloc extends Bloc<FantasyTeamEvent, FantasyTeamState> {
   FutureOr<void> loadFantasyTeamsToState(
     Emitter<FantasyTeamState> emit,
   ) async {
-    emit(FantasyTeamStateLoading());
+    emit(const FantasyTeamStateLoading());
 
-    List<FantasyTeam> _fantasyTeamsRanked =
+    List<FantasyTeam> fantasyTeamsRanked =
         await fantasyTeamRepository.getFantasyTeamsRanked();
 
-    List<FantasyTeam> _fantasyTeamsPointsFor =
+    List<FantasyTeam> fantasyTeamsPointsFor =
         await fantasyTeamRepository.getPointsFor();
 
-    List<FantasyTeam> _fantasyTeamsPointsAllowed =
+    List<FantasyTeam> fantasyTeamsPointsAllowed =
         await fantasyTeamRepository.getPointsAllowed();
 
     emit(FantasyTeamStateLoaded(
-      fantasyTeamsRanked: _fantasyTeamsRanked,
-      fantasyTeamsPointsFor: _fantasyTeamsPointsFor,
-      fantasyTeamsPointsAllowed: _fantasyTeamsPointsAllowed,
+      fantasyTeamsRanked: fantasyTeamsRanked,
+      fantasyTeamsPointsFor: fantasyTeamsPointsFor,
+      fantasyTeamsPointsAllowed: fantasyTeamsPointsAllowed,
     ));
   }
 }

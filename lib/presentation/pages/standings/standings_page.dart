@@ -5,7 +5,10 @@ import 'package:lod_prize_tracker/presentation/pages/standings/standings_form.da
 class StandingsPage extends StatelessWidget {
   final List<FantasyTeam> fantasyTeams;
 
-  StandingsPage({required this.fantasyTeams});
+  const StandingsPage({
+    Key? key,
+    required this.fantasyTeams,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

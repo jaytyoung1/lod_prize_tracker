@@ -5,7 +5,10 @@ import 'package:lod_prize_tracker/presentation/pages/points_allowed/points_allow
 class PointsAllowedPage extends StatelessWidget {
   final List<FantasyTeam> fantasyTeams;
 
-  PointsAllowedPage({required this.fantasyTeams});
+  const PointsAllowedPage({
+    Key? key,
+    required this.fantasyTeams,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
