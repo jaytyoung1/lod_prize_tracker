@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      key: const Key('lod_material_app'),
       title: 'LoD Prize Tracker',
       theme: ThemeData(
         primarySwatch: Colors.blue,
