@@ -1,4 +1,4 @@
-package com.example.lod_prize_tracker
+package com.lodprizetracker
 
 import io.flutter.embedding.android.FlutterActivity
 
