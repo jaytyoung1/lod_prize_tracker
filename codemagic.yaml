@@ -1,6 +1,5 @@
 # Automatically generated on 2021-11-07 UTC from https://codemagic.io/app/608afd2e790dee274d234a87/settings
 # Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
-
 workflows:
   issue-workflow:
     name: Issue Workflow
