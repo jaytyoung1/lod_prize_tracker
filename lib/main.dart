@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       key: const Key('lod_material_app'),
+      debugShowCheckedModeBanner: false,
       title: 'LoD Prize Tracker',
       theme: ThemeData(
         primarySwatch: Colors.blue,
