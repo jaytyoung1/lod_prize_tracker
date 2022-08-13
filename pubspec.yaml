@@ -37,10 +37,18 @@ dependencies:
 dev_dependencies:
   bloc_test: ^9.0.3
   build_runner: ^2.2.0
+  flutter_launcher_icons: ^0.10.0
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
   json_serializable: ^6.3.1
+
+flutter_icons:
+  image_path_android: "assets/lod_logo.png"
+  image_path_ios: "assets/lod_logo.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
