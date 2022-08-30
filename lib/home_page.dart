@@ -4,6 +4,7 @@ import 'package:lod_prize_tracker/application/fantasy_team/fantasy_team.dart';
 import 'package:lod_prize_tracker/infrastructure/fantasy_team/fantasy_team_repository.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_allowed/points_allowed_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_for/points_for_page.dart';
+import 'package:lod_prize_tracker/presentation/pages/splash_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/standings/standings_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -88,22 +89,8 @@ class HomePageState extends State<HomePage> {
               ),
             );
           }
-          return const Center(child: CircularProgressIndicator());
+          return const SplashPage();
         },
-        // child: Center(
-        //   child: Column(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: <Widget>[
-        //       Text(
-        //         'You have pushed the button this many times:',
-        //       ),
-        //       Text(
-        //         '$_counter',
-        //         style: Theme.of(context).textTheme.headline4,
-        //       ),
-        //     ],
-        //   ),
-        // ),
       ),
     );
     //   floatingActionButton: FloatingActionButton(
