@@ -22,7 +22,7 @@ workflows:
       events:
         - push
       branch_patterns:
-        - pattern: '*issue*'
+        - pattern: 'issue*'
           include: true
           source: true
       tag_patterns:
