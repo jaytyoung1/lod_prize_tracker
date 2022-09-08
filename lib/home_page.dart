@@ -39,7 +39,7 @@ class HomePageState extends State<HomePage> {
       child: BlocBuilder<FantasyTeamBloc, FantasyTeamState>(
         builder: (BuildContext context, FantasyTeamState state) {
           if (state is FantasyTeamStateLoaded) {
-            return const SplashPage();
+            // return const SplashPage();
             pages = [
               StandingsPage(
                 fantasyTeams: state.fantasyTeamsRanked,
