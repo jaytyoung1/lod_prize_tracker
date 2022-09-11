@@ -1,0 +1,5 @@
+Initial Release!
+
+Track the side prizes for the 2022 League of Degenerates fantasy football season.
+
+Prizes include best regular season record ($50), total points for ($100), and total points allowed ($50).
