@@ -55,6 +55,9 @@ class HomePageState extends State<HomePage> {
             return Scaffold(
               appBar: AppBar(
                 title: Text(widget.title),
+                actions: [
+                  _appBarAction(),
+                ],
               ),
               body: pages[pageIndex],
               bottomNavigationBar: BottomNavigationBar(
@@ -100,5 +103,30 @@ class HomePageState extends State<HomePage> {
     //     child: Icon(Icons.add),
     //   ),
     // );
+  }
+
+  Widget _appBarAction() {
+    return Padding(
+      padding: const EdgeInsets.only(right: 8.0),
+      child: PopupMenuButton<String>(
+        padding: const EdgeInsets.all(0.0),
+        icon: const Text(
+          '2022',
+          style: TextStyle(fontSize: 20),
+        ),
+        itemBuilder: (BuildContext context) {
+          return const [
+            PopupMenuItem<String>(
+              value: '2021',
+              child: Text('2021'),
+            ),
+            PopupMenuItem<String>(
+              value: '2022',
+              child: Text('2022'),
+            ),
+          ];
+        },
+      ),
+    );
   }
 }
