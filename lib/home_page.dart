@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lod_prize_tracker/application/fantasy_team/fantasy_team.dart';
+import 'package:lod_prize_tracker/application/fantasy_team/bloc.dart';
 import 'package:lod_prize_tracker/infrastructure/fantasy_team/fantasy_team_repository.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_allowed/points_allowed_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_for/points_for_page.dart';
