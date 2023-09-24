@@ -17,9 +17,11 @@ class StandingsForm extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return Card(
           child: ListTile(
-            leading: Text(fantasyTeams[index].playoffSeed.toString()),
-            title: Text(
-                '${fantasyTeams[index].location!} ${fantasyTeams[index].nickname!}'),
+            // leading: Text(fantasyTeams[index].playoffSeed.toString()),
+            leading: Text((index + 1).toString()),
+            title: Text(fantasyTeams[index].name!),
+            // title: Text(
+            //     '${fantasyTeams[index].location!} ${fantasyTeams[index].nickname!}'),
             trailing: Text(
                 '${fantasyTeams[index].record.overall!.wins}-${fantasyTeams[index].record.overall!.losses}'),
           ),

@@ -9,6 +9,12 @@ class FantasyTeam extends Equatable {
   /// Overall team rank.
   final int? playoffSeed;
 
+  /// Final standing.
+  final int? rankCalculatedFinal;
+
+  /// Represents the team name.
+  final String? name;
+
   /// Represents the first part of the team name.
   final String? location;
 
@@ -16,13 +22,15 @@ class FantasyTeam extends Equatable {
   final String? nickname;
 
   /// Represents the team's logo
-  final String logo;
+  final String? logo;
 
   /// Represents the team's overall record
   final Record record;
 
   const FantasyTeam({
     required this.playoffSeed,
+    required this.rankCalculatedFinal,
+    required this.name,
     required this.location,
     required this.nickname,
     required this.logo,
@@ -39,6 +47,8 @@ class FantasyTeam extends Equatable {
   @override
   List<Object?> get props => [
         playoffSeed,
+        rankCalculatedFinal,
+        name,
         location,
         nickname,
         logo,

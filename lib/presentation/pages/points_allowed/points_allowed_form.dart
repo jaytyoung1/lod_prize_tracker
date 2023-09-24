@@ -18,8 +18,9 @@ class PointsAllowedForm extends StatelessWidget {
         return Card(
           child: ListTile(
             leading: Text((index + 1).toString()),
-            title: Text(
-                '${fantasyTeams[index].location!} ${fantasyTeams[index].nickname!}'),
+            title: Text(fantasyTeams[index].name!),
+            // title: Text(
+            //     '${fantasyTeams[index].location!} ${fantasyTeams[index].nickname!}'),
             trailing: Text(fantasyTeams[index]
                 .record
                 .overall!

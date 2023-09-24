@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:lod_prize_tracker/application/fantasy_team/bloc.dart';
 import 'package:lod_prize_tracker/infrastructure/fantasy_team/fantasy_team_repository.dart';
 import 'package:lod_prize_tracker/presentation/pages/points_allowed/points_allowed_page.dart';
@@ -28,13 +29,13 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var pages = [];
-
     return MultiBlocProvider(
       providers: [
         BlocProvider<FantasyTeamBloc>(
             create: (_) =>
                 FantasyTeamBloc(fantasyTeamRepository: FantasyTeamRepository())
-                  ..add(LoadFantasyTeams())),
+                  ..add(LoadFantasyTeams(
+                      year: DateFormat('yyyy').format(DateTime.now())))),
       ],
       child: BlocBuilder<FantasyTeamBloc, FantasyTeamState>(
         builder: (BuildContext context, FantasyTeamState state) {
@@ -56,7 +57,49 @@ class HomePageState extends State<HomePage> {
               appBar: AppBar(
                 title: Text(widget.title),
                 actions: [
-                  _appBarAction(),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: PopupMenuButton<String>(
+                      onSelected: (value) {
+                        BlocProvider.of<FantasyTeamBloc>(context).add(
+                          LoadFantasyTeams(year: value),
+                        );
+                      },
+                      padding: const EdgeInsets.all(0.0),
+                      icon: Text(
+                        state.year,
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                      itemBuilder: (BuildContext context) {
+                        return const [
+                          PopupMenuItem<String>(
+                            value: '2023',
+                            child: Text('2023'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: '2022',
+                            child: Text('2022'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: '2020',
+                            child: Text('2020'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: '2019',
+                            child: Text('2019'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: '2018',
+                            child: Text('2018'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: '2017',
+                            child: Text('2017'),
+                          ),
+                        ];
+                      },
+                    ),
+                  )
                 ],
               ),
               body: pages[pageIndex],
@@ -103,30 +146,5 @@ class HomePageState extends State<HomePage> {
     //     child: Icon(Icons.add),
     //   ),
     // );
-  }
-
-  Widget _appBarAction() {
-    return Padding(
-      padding: const EdgeInsets.only(right: 8.0),
-      child: PopupMenuButton<String>(
-        padding: const EdgeInsets.all(0.0),
-        icon: const Text(
-          '2022',
-          style: TextStyle(fontSize: 20),
-        ),
-        itemBuilder: (BuildContext context) {
-          return const [
-            PopupMenuItem<String>(
-              value: '2021',
-              child: Text('2021'),
-            ),
-            PopupMenuItem<String>(
-              value: '2022',
-              child: Text('2022'),
-            ),
-          ];
-        },
-      ),
-    );
   }
 }

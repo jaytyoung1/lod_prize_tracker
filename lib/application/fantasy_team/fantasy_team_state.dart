@@ -20,13 +20,20 @@ class FantasyTeamStateLoaded extends FantasyTeamState {
   final List<FantasyTeam> fantasyTeamsRanked;
   final List<FantasyTeam> fantasyTeamsPointsFor;
   final List<FantasyTeam> fantasyTeamsPointsAllowed;
+  final String year;
 
-  const FantasyTeamStateLoaded(
-      {required this.fantasyTeamsRanked,
-      required this.fantasyTeamsPointsFor,
-      required this.fantasyTeamsPointsAllowed});
+  const FantasyTeamStateLoaded({
+    required this.fantasyTeamsRanked,
+    required this.fantasyTeamsPointsFor,
+    required this.fantasyTeamsPointsAllowed,
+    required this.year,
+  });
 
   @override
-  List<Object> get props =>
-      [fantasyTeamsRanked, fantasyTeamsPointsFor, fantasyTeamsPointsAllowed];
+  List<Object> get props => [
+        fantasyTeamsRanked,
+        fantasyTeamsPointsFor,
+        fantasyTeamsPointsAllowed,
+        year,
+      ];
 }

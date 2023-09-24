@@ -12,6 +12,8 @@ void main() {
   test('Counter increments smoke test', () {
     FantasyTeam fantasyTeam = const FantasyTeam(
       playoffSeed: 1,
+      rankCalculatedFinal: 1,
+      name: '',
       location: 'Location',
       nickname: 'Nickname',
       logo: 'logo',
