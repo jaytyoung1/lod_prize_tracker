@@ -68,7 +68,7 @@ class HomePageState extends State<HomePage> {
                       },
                       padding: const EdgeInsets.all(0.0),
                       icon: SizedBox(
-                        width: 50,
+                        width: 60,
                         child: Text(
                           state.year,
                           style: const TextStyle(fontSize: 20),
