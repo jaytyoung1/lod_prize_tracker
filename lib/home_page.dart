@@ -55,6 +55,7 @@ class HomePageState extends State<HomePage> {
 
             return Scaffold(
               appBar: AppBar(
+                centerTitle: false,
                 title: Text(widget.title),
                 actions: [
                   Padding(
