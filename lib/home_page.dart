@@ -71,7 +71,7 @@ class HomePageState extends State<HomePage> {
                         width: 200,
                         child: Text(
                           state.year,
-                          style: const TextStyle(fontSize: 20),
+                          style: const TextStyle(fontSize: 18),
                         ),
                       ),
                       itemBuilder: (BuildContext context) {
