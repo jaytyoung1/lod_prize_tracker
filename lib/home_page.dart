@@ -67,12 +67,10 @@ class HomePageState extends State<HomePage> {
                         );
                       },
                       padding: const EdgeInsets.all(0.0),
-                      icon: SizedBox(
-                        width: 200,
-                        child: Text(
-                          state.year,
-                          style: const TextStyle(fontSize: 18),
-                        ),
+                      iconSize: 25,
+                      icon: Text(
+                        state.year,
+                        style: const TextStyle(fontSize: 20),
                       ),
                       itemBuilder: (BuildContext context) {
                         return const [
