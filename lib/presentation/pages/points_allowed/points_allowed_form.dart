@@ -5,9 +5,9 @@ class PointsAllowedForm extends StatelessWidget {
   final List<FantasyTeam> fantasyTeams;
 
   const PointsAllowedForm({
-    Key? key,
+    super.key,
     required this.fantasyTeams,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

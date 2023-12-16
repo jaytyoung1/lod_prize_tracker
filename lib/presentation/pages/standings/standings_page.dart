@@ -6,9 +6,9 @@ class StandingsPage extends StatelessWidget {
   final List<FantasyTeam> fantasyTeams;
 
   const StandingsPage({
-    Key? key,
+    super.key,
     required this.fantasyTeams,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

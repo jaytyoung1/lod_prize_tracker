@@ -9,7 +9,7 @@ import 'package:lod_prize_tracker/presentation/pages/splash_page.dart';
 import 'package:lod_prize_tracker/presentation/pages/standings/standings_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
+  const HomePage({super.key, required this.title});
 
   final String title;
 

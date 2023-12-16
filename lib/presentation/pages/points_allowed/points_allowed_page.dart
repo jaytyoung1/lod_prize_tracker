@@ -6,9 +6,9 @@ class PointsAllowedPage extends StatelessWidget {
   final List<FantasyTeam> fantasyTeams;
 
   const PointsAllowedPage({
-    Key? key,
+    super.key,
     required this.fantasyTeams,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
